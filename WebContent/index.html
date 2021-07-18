@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="headr">
+        <img
+          class="logoABC"
+          src="./images/Group 20399.svg"
+          alt="Logo of ABC Products"
+        />
+        <img
+          class="imageHighRadius"
+          src="./images/logo.svg"
+          alt="Logo of High Radius"
+        />
+      </div>
+      <div class="gridPanelSection">
+        <div class="gridHeader">
+          <p class="Invoice">Invoice List</p>
+        </div>
+        <div class="gridMenu">
+          <div class="rightShift">
+            <button id="add_modal" class="Btn" type="button">Add</button>
+            <button id="editbtn" class="Btn" type="button">Edit</button>
+            <button id="delete_btn" class="Btn" type="button">Delete</button>
+            <div class="searchBar">
+              <input
+                class="ip"
+                type="text"
+                placeholder=" Search by Invoice Number"
+              />
+              <img
+                class="im"
+                src="./images/Symbol 129 – 1.svg"
+                alt="Search Icon"
+              />
+            </div>
+          </div>
+          <div id="table"class="tbl">
+          </div>
+        </div>
+      </div>
+
+      <div id="add" class="modal">
+        <div class="modal_content">
+          <div class="headerModal">
+            <h2 class="adinv">Add Invoice</h2>
+            <img
+              id="close_add"
+              class="closeIm"
+              src="./images/baseline-close-24px.svg"
+              alt="Closing image"
+            />
+          </div>
+          <form id="mainformAdd"  method="POST"  action = " AddData">
+            <div class="adform">
+              <div class="leftSide">
+                <div class="seprate">
+                  <div>
+                    <label for="customerName" class="form_label"
+                      >Customer Name<span class="star">*</span></label
+                    >
+                  </div>
+                  <div>
+                    <input
+                      type="text"
+                      id="customer_name"
+                      name="customer_name"
+                      class="form_input"
+                    />
+                  </div>
+                </div>
+                <div class="seprate">
+                  <div>
+                    <label for="customerNo" class="form_label"
+                      >Customer No<span class="star">*</span></label
+                    ><br />
+                  </div>
+                  <div>
+                    <input
+                      type="text"
+                      id="customerNo"
+                      name="customerNo"
+                      class="form_input"
+                    />
+                  </div>
+                </div>
+
+                <div class="seprate">
+                  <div>
+                    <label for="invoiceNo" class="form_label"
+                      >Invoice No.<span class="star">*</span></label
+                    >
+                  </div>
+                  <div>
+                    <input
+                      type="text"
+                      id="invoiceNo"
+                      name="invoiceNo"
+                      class="form_input"
+                    />
+                  </div>
+                </div>
+                <div class="seprate">
+                  <div>
+                    <label for="invoiceAmt" class="form_label"
+                      >Invoice Amount<span class="star">*</span></label
+                    >
+                  </div>
+                  <div>
+                    <input
+                      type="text"
+                      id="invoiceAmt"
+                      name="invoiceAmt"
+                      class="form_input"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="rightSide">
+                <div class="seprate">
+                  <div>
+                    <label for="dueDate" class="form_label"
+                      >Due Date.<span class="star">*</span>
+                    </label>
+                  </div>
+                  <div>
+                    <input
+                      type="date"
+                      id="dueDate"
+                      name="dueDate"
+                      class="form_input"
+                    />
+                  </div>
+                </div>
+                <div class="seprate">
+                  <div>
+                    <label for="add_notes" class="form_label">Notes. </label>
+                  </div>
+                  <div>
+                    <textarea
+                      cols="50"
+                      rows="4"
+                      id="add_notes"
+                      class="form_input_textarea"
+                      name="add_notes"
+                    ></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+          <div class="footerModal">
+            <div class="footer_left">
+              <button id="cancel_button" class="cancelBtn">Cancel</button>
+            </div>
+            <div class="footer_right">
+              <div>
+                <button type="reset" class="resetBtn" form="mainformAdd">Clear</button>
+              </div>
+              <div>
+                <button type="submit" class="submitBtn" form="mainformAdd">Add</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="edit" class="modal">
+        <div class="modal_content_edit">
+          <div class="headerModal">
+            <h2 class="adinv">Edit Invoice</h2>
+            <img
+              id="close_edit"
+              class="closeIm"
+              src="./images/baseline-close-24px.svg"
+              alt="Closing image"
+            />
+          </div>
+          <form id="mainformEdit">
+            <div class="editform">
+              <div class="seprate">
+                <div>
+                  <label for="Invoice Amount" class="form_label"
+                    >Invoice Amount<span class="star">*</span>
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="text"
+                    id="Invoice Amount"
+                    name="Invoice Amount"
+                    class="form_input"
+                  />
+                </div>
+              </div>
+              <div class="seprate">
+                <div>
+                  <label for="edit_notes" class="form_label">Notes. </label>
+                </div>
+                <div>
+                  <textarea
+                    cols="50"
+                    rows="4"
+                    id="edit_notes"
+                    class="form_input_textarea"
+                    name="edit_notes"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+          </form>
+          <div class="footerModal">
+            <div class="footer_left">
+              <button id="cancel_edit_button" class="cancelBtn">Cancel</button>
+            </div>
+            <div class="footer_right">
+              <div>
+                <button type="reset" class="resetBtn" form="mainformEdit" >Reset</button>
+              </div>
+              <div>
+                <button type="submit" class="submitBtn" form="mainformEdit">Save</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="delete" class="modal">
+      <div class="modal_content_delete">
+        <div class="headerModal">
+          <h2 class="adinv">Delete record(s)?</h2>
+          <img
+            id="close_delete"
+            class="closeIm"
+            src="./images/baseline-close-24px.svg"
+            alt="Closing image"
+          />
+        </div>
+        <p class="para">
+          You'll lose your record(s) after this action. We can't recover them
+          once you delete.<br />
+          <br />
+          Are you sure you want to
+          <span class="star"> permanently delete</span> them?
+        </p>
+        <div class="footerModal">
+          <div class="footer_right_delete">
+            <div>
+              <button type="reset" class="resetBtn">Reset</button>
+            </div>
+            <div>
+              <button type="submit" class="submitBtn" >Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./Javascript/script.js"></script>
+  </body>
+</html>
