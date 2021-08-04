@@ -6,3 +6,4 @@
 # EDIT BUTTON
 ![EDIT BUTTON.JPG](https://github.com/jadonmj/AI-Enabled-Invoice-Management-Application./blob/main/Edit%20button.jpg)
 # DELETE BUTTON
+![DELETE BUTTON.JPG](https://github.com/jadonmj/AI-Enabled-Invoice-Management-Application./blob/main/delete%20button.jpg)
